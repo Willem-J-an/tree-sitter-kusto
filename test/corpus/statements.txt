@@ -1,0 +1,238 @@
+==================
+Table query
+==================
+
+AzureDiagnostics;
+
+---
+
+(source_file
+  (tabular_expression
+  (source
+    (identifier))))
+
+==================
+Table expression query
+==================
+
+AzureDiagnostics
+| project timestamp, second
+| order by timestamp
+
+---
+
+(source_file
+  (tabular_expression
+    (source
+      (identifier))
+    (operation
+      (pipe)
+      (operator)
+      (identifier)
+      (identifier))
+    (operation
+      (pipe)
+      (operator)
+      (identifier))
+    ))
+
+==================
+Table where query
+==================
+
+AzureDiagnostics
+| where timestamp == '2023-10-15'
+
+---
+
+(source_file
+  (tabular_expression
+    (source
+      (identifier))
+    (operation
+      (pipe)
+      (operator)
+      (binary_expression
+        (identifier)
+        (string)))))
+
+
+==================
+let statement
+==================
+
+let expect_pipelines = AzureDiagnostics;
+expect_pipelines
+
+---
+
+(source_file
+  (let_statement
+    (let_keyword)
+    (identifier)
+    (tabular_expression
+      (source
+        (identifier))))
+    (tabular_expression
+      (source
+        (identifier))))
+
+
+==================
+let dynamic
+==================
+
+let Status = dynamic([ 'Failed', 'TimedOut']);
+AzureDiagnostics
+
+---
+
+    (source_file
+      (let_statement
+        (let_keyword)
+        (identifier)
+        (function_call
+          (identifier)
+          (function_arguments
+            (array
+              (string)
+              (string)))))
+      (tabular_expression
+        (source
+          (identifier))))
+
+==================
+let datatable
+==================
+
+let tabular = datatable(var1: string, var2: int)['x', 1, 'y', 2];
+tabular
+
+---
+
+    (source_file
+      (let_statement
+        (let_keyword)
+        (identifier)
+        (datatable
+          (function_call
+            (identifier)
+            (function_arguments
+              (typed_parameter
+                (identifier)
+                (type))
+              (typed_parameter
+                (identifier)
+                (type))))
+          (array
+            (string)
+            (number)
+            (string)
+            (number))))
+      (tabular_expression
+        (source
+          (identifier))))
+
+==================
+multiple where clauses
+==================
+
+AzureDiagnostics
+| where 1==1
+    and ResourceProvider == 'MICROSOFT.DATAFACTORY'
+    and Category == 'PipelineRuns'
+    and pipelineName_s in (expect_pipelines)
+
+---
+
+(source_file
+  (tabular_expression
+    (source
+      (identifier))
+    (operation
+      (pipe)
+      (operator)
+      (compound_expression
+        (binary_expression
+          (number)
+          (number))
+        (compound_keywords)
+        (binary_expression
+          (identifier)
+          (string))
+        (compound_keywords)
+        (binary_expression
+          (identifier)
+          (string))
+        (compound_keywords)
+        (binary_expression
+          (identifier)
+          (binary_operator)
+          (identifier))))))
+
+==================
+assignment operator
+==================
+
+AzureDiagnostics
+| extend statusNum = array_index_of(Status, status_s), status[index]
+
+---
+
+    (source_file
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (assignment_expression
+            (identifier)
+            (function_call
+              (identifier)
+              (function_arguments
+                (identifier)
+                (identifier))))
+          (property_index
+            (identifier)
+            (identifier)))))
+
+==================
+join query
+==================
+
+AzureDiagnostics
+| join kind=inner (AzureDiagnostics) on $left.col1 == $right.col2
+| join kind=inner AzureDiagnostics on col1
+
+---
+
+(source_file
+  (tabular_expression
+    (source
+      (identifier))
+    (operation
+      (pipe)
+      (join_operator)
+      (join_operator)
+      (join_types)
+      (tabular_expression
+        (source
+          (identifier)))
+      (join_operator)
+      (binary_expression
+        (property_identifier
+          (identifier)
+          (identifier))
+        (property_identifier
+          (identifier)
+          (identifier))))
+    (operation
+      (pipe)
+      (join_operator)
+      (join_operator)
+      (join_types)
+      (source
+        (identifier))
+      (join_operator)
+      (identifier))))
