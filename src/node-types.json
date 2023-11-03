@@ -12,11 +12,15 @@
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "assignment",
           "named": true
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -28,6 +32,14 @@
           "named": true
         },
         {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
           "type": "function_call",
           "named": true
         },
@@ -36,7 +48,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -48,11 +68,19 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -63,23 +91,39 @@
     }
   },
   {
-    "type": "assignment_expression",
+    "type": "assignment",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "array",
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
           "named": true
         },
         {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -91,7 +135,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -103,11 +155,110 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "between_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "between_function",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -123,14 +274,18 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "array",
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "between_call",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -138,7 +293,23 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -150,7 +321,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -162,11 +341,19 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -182,6 +369,16 @@
     "fields": {}
   },
   {
+    "type": "bool",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "compound_expression",
     "named": true,
     "fields": {},
@@ -190,11 +387,83 @@
       "required": true,
       "types": [
         {
+          "type": "array",
+          "named": true
+        },
+        {
           "type": "binary_expression",
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
           "type": "compound_keywords",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -218,7 +487,205 @@
           "named": true
         },
         {
+          "type": "datatable_function",
+          "named": true
+        },
+        {
+          "type": "typed_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dynamic_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
           "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "func",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "operation",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tabular_expression",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "typed_parameter",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         }
       ]
@@ -237,11 +704,15 @@
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "assignment",
           "named": true
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -253,6 +724,14 @@
           "named": true
         },
         {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
           "type": "function_call",
           "named": true
         },
@@ -261,7 +740,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -273,11 +760,19 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -317,6 +812,93 @@
     "fields": {}
   },
   {
+    "type": "key_value_pair",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "let_statement",
     "named": true,
     "fields": {},
@@ -329,11 +911,27 @@
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
           "named": true
         },
         {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -349,7 +947,19 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "operation",
           "named": true
         },
         {
@@ -361,6 +971,10 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -369,11 +983,35 @@
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
           "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mv_apply_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "object",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key_value_pair",
           "named": true
         }
       ]
@@ -392,11 +1030,15 @@
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "assignment",
           "named": true
         },
         {
           "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -405,6 +1047,14 @@
         },
         {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -424,7 +1074,23 @@
           "named": true
         },
         {
+          "type": "mv_apply_operator",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "operation",
           "named": true
         },
         {
@@ -444,6 +1110,10 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "source",
           "named": true
         },
@@ -452,7 +1122,7 @@
           "named": true
         },
         {
-          "type": "summarize_operator",
+          "type": "sub_operator",
           "named": true
         },
         {
@@ -460,7 +1130,23 @@
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_operator",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_cast_function",
           "named": true
         },
         {
@@ -484,30 +1170,31 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "property_index",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
           "type": "array",
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
           "named": true
         },
         {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -519,7 +1206,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -531,11 +1226,19 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -544,6 +1247,297 @@
         }
       ]
     }
+  },
+  {
+    "type": "property_index",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range_operation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "operation",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "range_operator",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tabular_expression",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_operator",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "range_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sort_by",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
+          "named": true
+        },
+        {
+          "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "null",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
+          "named": true
+        },
+        {
+          "type": "property_identifier",
+          "named": true
+        },
+        {
+          "type": "property_index",
+          "named": true
+        },
+        {
+          "type": "sort_by",
+          "named": true
+        },
+        {
+          "type": "sort_keyword",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sort_keyword",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source",
@@ -573,6 +1567,10 @@
           "named": true
         },
         {
+          "type": "operation",
+          "named": true
+        },
+        {
           "type": "tabular_expression",
           "named": true
         }
@@ -580,7 +1578,12 @@
     }
   },
   {
-    "type": "summarize_operator",
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sub_operator",
     "named": true,
     "fields": {}
   },
@@ -593,11 +1596,57 @@
       "required": true,
       "types": [
         {
+          "type": "function_call",
+          "named": true
+        },
+        {
           "type": "operation",
           "named": true
         },
         {
+          "type": "range_operation",
+          "named": true
+        },
+        {
           "type": "source",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "timespan",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "to_scalar_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "operation",
+          "named": true
+        },
+        {
+          "type": "tabular_expression",
+          "named": true
+        },
+        {
+          "type": "to_scalar_function",
           "named": true
         }
       ]
@@ -633,18 +1682,34 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "array",
           "named": true
         },
         {
-          "type": "assignment_expression",
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "compound_expression",
           "named": true
         },
         {
           "type": "datatable",
+          "named": true
+        },
+        {
+          "type": "dynamic_list",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         },
         {
@@ -656,7 +1721,15 @@
           "named": true
         },
         {
+          "type": "null",
+          "named": true
+        },
+        {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "object",
           "named": true
         },
         {
@@ -668,11 +1741,19 @@
           "named": true
         },
         {
+          "type": "sort_by",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
         {
-          "type": "typed_parameter",
+          "type": "timespan",
+          "named": true
+        },
+        {
+          "type": "to_scalar_call",
           "named": true
         },
         {
@@ -681,6 +1762,14 @@
         }
       ]
     }
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
   },
   {
     "type": "(",
@@ -711,7 +1800,15 @@
     "named": false
   },
   {
+    "type": "..",
+    "named": false
+  },
+  {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {
@@ -763,8 +1860,16 @@
     "named": false
   },
   {
+    "type": "asc",
+    "named": false
+  },
+  {
     "type": "bag_unpack",
     "named": false
+  },
+  {
+    "type": "between_function",
+    "named": true
   },
   {
     "type": "bool",
@@ -775,11 +1880,31 @@
     "named": false
   },
   {
+    "type": "contains",
+    "named": false
+  },
+  {
+    "type": "d",
+    "named": false
+  },
+  {
+    "type": "datatable_function",
+    "named": true
+  },
+  {
     "type": "datetime",
     "named": false
   },
   {
     "type": "decimal",
+    "named": false
+  },
+  {
+    "type": "desc",
+    "named": false
+  },
+  {
+    "type": "distinct",
     "named": false
   },
   {
@@ -795,11 +1920,23 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
     "type": "fullouter",
     "named": false
   },
   {
     "type": "guid",
+    "named": false
+  },
+  {
+    "type": "h",
     "named": false
   },
   {
@@ -859,8 +1996,32 @@
     "named": false
   },
   {
+    "type": "m",
+    "named": false
+  },
+  {
+    "type": "ms",
+    "named": false
+  },
+  {
+    "type": "mv-apply",
+    "named": false
+  },
+  {
+    "type": "mv-expand",
+    "named": false
+  },
+  {
     "type": "not",
     "named": false
+  },
+  {
+    "type": "ns",
+    "named": false
+  },
+  {
+    "type": "null",
+    "named": true
   },
   {
     "type": "number",
@@ -887,6 +2048,14 @@
     "named": false
   },
   {
+    "type": "project-away",
+    "named": false
+  },
+  {
+    "type": "range",
+    "named": false
+  },
+  {
     "type": "real",
     "named": false
   },
@@ -903,12 +2072,24 @@
     "named": false
   },
   {
-    "type": "string",
+    "type": "s",
+    "named": false
+  },
+  {
+    "type": "sort",
+    "named": false
+  },
+  {
+    "type": "startswith",
+    "named": false
+  },
+  {
+    "type": "step",
     "named": false
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "summarize",
@@ -919,7 +2100,39 @@
     "named": false
   },
   {
+    "type": "to_operator",
+    "named": true
+  },
+  {
+    "type": "to_scalar_function",
+    "named": true
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "type_cast_function",
+    "named": true
+  },
+  {
+    "type": "union",
+    "named": false
+  },
+  {
+    "type": "us",
+    "named": false
+  },
+  {
     "type": "where",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

@@ -21,20 +21,19 @@ AzureDiagnostics
 
 ---
 
-(source_file
-  (tabular_expression
-    (source
-      (identifier))
-    (operation
-      (pipe)
-      (operator)
-      (identifier)
-      (identifier))
-    (operation
-      (pipe)
-      (operator)
-      (identifier))
-    ))
+    (source_file
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (identifier)
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (identifier))))
 
 ==================
 Table where query
@@ -87,8 +86,7 @@ AzureDiagnostics
 
 ---
 
-    (source_file
-      (let_statement
+    (source_file (let_statement
         (let_keyword)
         (identifier)
         (function_call
@@ -115,15 +113,13 @@ tabular
         (let_keyword)
         (identifier)
         (datatable
-          (function_call
+          (datatable_function)
+          (typed_parameter
             (identifier)
-            (function_arguments
-              (typed_parameter
-                (identifier)
-                (type))
-              (typed_parameter
-                (identifier)
-                (type))))
+            (type))
+          (typed_parameter
+            (identifier)
+            (type))
           (array
             (string)
             (number)
@@ -142,33 +138,36 @@ AzureDiagnostics
     and ResourceProvider == 'MICROSOFT.DATAFACTORY'
     and Category == 'PipelineRuns'
     and pipelineName_s in (expect_pipelines)
+    and true
 
 ---
 
-(source_file
-  (tabular_expression
-    (source
-      (identifier))
-    (operation
-      (pipe)
-      (operator)
-      (compound_expression
-        (binary_expression
-          (number)
-          (number))
-        (compound_keywords)
-        (binary_expression
-          (identifier)
-          (string))
-        (compound_keywords)
-        (binary_expression
-          (identifier)
-          (string))
-        (compound_keywords)
-        (binary_expression
-          (identifier)
-          (binary_operator)
-          (identifier))))))
+    (source_file
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (compound_expression
+            (binary_expression
+              (number)
+              (number))
+            (compound_keywords)
+            (binary_expression
+              (identifier)
+              (string))
+            (compound_keywords)
+            (binary_expression
+              (identifier)
+              (string))
+            (compound_keywords)
+            (binary_expression
+              (identifier)
+              (binary_operator)
+              (identifier))
+            (compound_keywords)
+            (bool)))))
 
 ==================
 assignment operator
@@ -186,7 +185,7 @@ AzureDiagnostics
         (operation
           (pipe)
           (operator)
-          (assignment_expression
+          (assignment
             (identifier)
             (function_call
               (identifier)
@@ -219,7 +218,7 @@ AzureDiagnostics
       (tabular_expression
         (source
           (identifier)))
-      (join_operator)
+      (sub_operator)
       (binary_expression
         (property_identifier
           (identifier)
@@ -234,5 +233,196 @@ AzureDiagnostics
       (join_types)
       (source
         (identifier))
-      (join_operator)
+      (sub_operator)
       (identifier))))
+
+==================
+let function
+==================
+let parse_result = (resultCode: int) {
+  case(
+    resultCode == -2, 4h/1ms,
+    strcat('Unknown resultcode: ', resultCode)
+  )
+};
+
+---
+
+    (source_file
+      (let_statement
+        (let_keyword)
+        (identifier)
+        (func
+          (typed_parameter
+            (identifier)
+            (type))
+          (function_call
+            (identifier)
+            (function_arguments
+              (binary_expression
+                (identifier)
+                (number))
+              (binary_expression
+                (timespan
+                  (number))
+                (timespan
+                  (number)))
+              (function_call
+                (identifier)
+                (function_arguments
+                  (string)
+                  (identifier))))))))
+
+==================
+extend assign binary
+==================
+
+AzureDiagnostics
+| extend
+  running_duration = now(),
+  max_duration_before_timeout=4h/1ms;
+
+---
+
+    (source_file
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (assignment
+            (identifier)
+            (function_call
+              (identifier)))
+          (assignment
+            (identifier)
+            (binary_expression
+              (timespan
+                (number))
+              (timespan
+                (number)))))))
+
+==================
+mv-apply
+==================
+
+// comment
+AzureDiagnostics
+| mv-apply c1_trace = c1_drilldown.c1_traces to typeof(dynamic) on (
+    where func().message contains 'data'
+    | project var
+);
+
+---
+
+    (source_file
+      (comment)
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (mv_apply_operator)
+          (assignment
+            (identifier)
+            (property_identifier
+              (identifier)
+              (identifier)))
+          (to_operator)
+          (type_cast_function)
+          (type)
+          (sub_operator)
+          (operator)
+          (binary_expression
+            (property_identifier
+              (function_call
+                (identifier))
+              (identifier))
+            (binary_operator)
+            (string))
+          (operation
+            (pipe)
+            (operator)
+            (identifier)))))
+
+
+==================
+range operator
+==================
+
+range expect_run_timestamp
+        from toscalar(health_runs | summarize min(run_timestamp))
+        to datetime_add('hour', 2, toscalar(health_runs | summarize max(run_timestamp)))
+        step 1h
+    | summarize by bin(expect_run_timestamp, 1h)
+
+---
+
+    (source_file
+      (tabular_expression
+        (range_operation
+          (range_operator)
+          (identifier)
+          (range_operator)
+          (to_scalar_call
+            (to_scalar_function)
+            (tabular_expression
+              (source
+                (identifier))
+              (operation
+                (pipe)
+                (operator)
+                (function_call
+                  (identifier)
+                  (function_arguments
+                    (identifier))))))
+          (to_operator)
+          (function_call
+            (identifier)
+            (function_arguments
+              (string)
+              (number)
+              (to_scalar_call
+                (to_scalar_function)
+                (tabular_expression
+                  (source
+                    (identifier))
+                  (operation
+                    (pipe)
+                    (operator)
+                    (function_call
+                      (identifier)
+                      (function_arguments
+                        (identifier))))))))
+          (range_operator)
+          (timespan
+            (number)))
+        (operation
+          (pipe)
+          (operator)
+          (sub_operator)
+          (function_call
+            (identifier)
+            (function_arguments
+              (identifier)
+              (timespan
+                (number)))))))
+
+==================
+union operator
+==================
+
+p1b_exceptions
+| union(p1a_exceptions)
+
+---
+
+    (source_file
+      (tabular_expression
+        (source
+          (identifier))
+        (operation
+          (pipe)
+          (operator)
+          (identifier))))
